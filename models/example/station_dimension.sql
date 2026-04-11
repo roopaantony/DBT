@@ -7,9 +7,9 @@ start_station_name as station_name,
 START_LAT as station_lat,
 START_LNG as start_station_lng
 
-from {{ source('demo', 'bike') }}
+from {{ ref('stg_bike') }}
 
-where start_statio_id != '"start_station_id"'
+where RIDE_ID != '"bikeid"'
 
 
 )
